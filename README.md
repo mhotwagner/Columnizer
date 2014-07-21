@@ -5,6 +5,7 @@ jQuery dependent column-sorting utility, with exceptions!
 
 In short, Columnizer is a jQuery utility for distributing child elements across columns within a parent element.  It seeks to create even columns by assigning each new/subsequent element to the currently shortest column, BUT, it is sensitive to height exceptions, and will kick elements back to preceding columns if said exception is not exceeded.
 
+
 In long...
 
 This utility was built to solve the issue of generating clean, logically organized columns.
@@ -49,4 +50,9 @@ What I built was a column sorting utility... with exceptions!
 
 More to come...
 
-
+Full description of setup and use coming soon, but leaving this snippet from a $(document).ready() call here rightnow:
+```
+$('.columnizer').each(function() {
+		new Columnizer(this, $(this).data('columnizer-options'));
+})
+```
