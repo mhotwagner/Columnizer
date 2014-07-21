@@ -41,7 +41,7 @@ The second solution was to find an already existing column sorting utility to si
 [       ]
 ```
 
-While we have a much more even (and thus aesthetically pleasing) column flow, the order is now awkward.  The problem, of course, is that a column sorting algorithm based solely on identifying the shortest column doesn't care if the difference in height is 1 unit or 1000 units.  So, while this solution does solve the general problem, it's rigidity creates a new problem of an awkward flow.
+While we have a much more even (and thus aesthetically pleasing) column flow, the order is now awkward, and because of the relatively small height difference, appears to be counting 1, 2, 4, 3.  The problem, of course, is that a column sorting algorithm based solely on identifying the shortest column doesn't care if the difference in height is 1 unit or 1000 units.  So, while this solution does solve the general problem, it's rigidity creates a new problem of an awkward flow.
 
 What I needed was a smarter solution, which aimed evenly distribute elements across a column layout, but also gave consideration to the originally intended flow and order.
 
