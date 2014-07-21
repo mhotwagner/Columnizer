@@ -1,12 +1,3 @@
-// FUNCTIONS
-function getSpecificSelector (el) {
-	el = $(el);
-	s = el.prop('tagName').toLowerCase() + ( el.prop('className') ? '.' + el.attr('class').replace(' ','.') : '') + ( el.attr('id') ? '#' + el.attr('id') : '');
-	while (s.indexOf('..') != -1) { s = s.replace('..','.'); };
-	if (s.substr(-1) == '.') { s = s.substr(0, s.length -1); };
-	return s;
-}
-
 function Columnizer (container, options) {
 	this.container = $(this.getSpecificSelector(container));
 	this.options = options;a
@@ -37,7 +28,7 @@ Columnizer.prototype.init = function() {
 	if (!this.spacing) this.spacing = parseInt(this.item.css('margin-bottom'));
 	for (var i = 0; i < this.cols.count; i++) { this.cols.set.push([i,0]); }
 
-	// Setup the Shit
+	// Setup the container and item properties
 	if (this.container.css('position') == 'static') this.container.css('position', 'relative');
 	for (var i = 0; i < this.item.length; i++) {
 		o = $(this.item[i]);
@@ -61,9 +52,7 @@ Columnizer.prototype.columnize = function() {
 		this.cols.set.sort(function(a,b) { return a[0] - b[0] });
 		if (col[0] > 0) {
 			for (j = 0; j < col[0]; j++) {
-				console.log('in here');
 				if (this.cols.set[j][1] < (col[1] + this.exception)) {
-					console.log('and here!');
 					col = this.cols.set[j];
 					break;
 				}
@@ -89,12 +78,3 @@ Columnizer.prototype.getSpecificSelector = function (el) {
 	if (s.substr(-1) == '.') { s = s.substr(0, s.length -1); };
 	return s;
 }
-
-
-
-// JavaScript Document
-
-	$('.columnizer').each(function() {
-		new Columnizer(this, $(this).data('columnizer-options'));
-	})
-		
