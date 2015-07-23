@@ -1,6 +1,6 @@
 function Columnizer (container, options) {
 	this.container = $(this.getSpecificSelector(container));
-	this.options = options;a
+	this.options = options;
 	this.cols = {count : false, set : []};
 	this.init();
 
