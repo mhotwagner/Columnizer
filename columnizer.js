@@ -7,6 +7,7 @@ function Columnizer (container, options) {
 }
 Columnizer.prototype.init = function() {
 	this.outerWidth = this.container.width();
+	console.log( this.options );
 	if (this.options) {
 		this.itemSelector = this.options.itemSelector ? this.options.itemSelector : this.getSpecificSelector($(this.children[0])); //getSpecificSelector($(this.options.itemSelector)) : getSpecificSelector($(this.container.children()[0]));
 		this.item = $(this.itemSelector);
